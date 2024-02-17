@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.auth {
+    @include m.contenedor-sm;
+
+}
+
+.auth__texto {
+    font-size: 2rem;
+    text-align: center;
+    .auth__span {
+        @include m.texto-degradado(v.$azul, v.$secundario);
+        font-size: 2.2rem;
+        font-weight: v.$black;
+    }
+}
+
