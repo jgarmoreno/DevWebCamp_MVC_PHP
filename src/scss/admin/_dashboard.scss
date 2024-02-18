@@ -55,12 +55,11 @@
         align-items: center;
         padding: 2rem;
         border-radius: 1rem;
-        transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
         &:hover,
         &--actual {
             background-color: lighten(v.$gris-oscuro, 20);
             color: v.$blanco;
-
         }
     }
     &__icono {

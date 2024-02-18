@@ -792,7 +792,7 @@ h3 {
   align-items: center;
   padding: 2rem;
   border-radius: 1rem;
-  transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
 }
 .dashboard__enlace:hover, .dashboard__enlace--actual {
   background-color: #40587f;
