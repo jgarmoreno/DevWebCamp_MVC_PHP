@@ -12,9 +12,11 @@ class PonentesController {
         ]);
     }
     public static function crear (Router $router) {
+        $alertas = [];
 
         $router->render('admin/ponentes/crear', [
-            'titulo' => 'Inscribe un Ponente'
+            'titulo' => 'Inscribe un Ponente',
+            'alertas' => $alertas
         ]);
     }
 }
