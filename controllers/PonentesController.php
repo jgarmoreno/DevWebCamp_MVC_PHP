@@ -11,4 +11,10 @@ class PonentesController {
             'titulo' => 'Ponentes'
         ]);
     }
+    public static function crear (Router $router) {
+
+        $router->render('admin/ponentes/crear', [
+            'titulo' => 'Inscribe un Ponente'
+        ]);
+    }
 }
