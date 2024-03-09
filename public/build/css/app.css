@@ -816,4 +816,21 @@ h3 {
     padding: 1rem 5rem 3rem 5rem;
   }
 }
+.dashboard__boton {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+.dashboard__boton:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */
