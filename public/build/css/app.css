@@ -816,6 +816,12 @@ h3 {
     padding: 1rem 5rem 3rem 5rem;
   }
 }
+@media (min-width: 768px) {
+  .dashboard__contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .dashboard__boton {
   background-color: #007df4;
   padding: 1.5rem 4rem;
@@ -828,9 +834,16 @@ h3 {
   text-align: center;
   width: 100%;
   display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
 }
 .dashboard__boton:hover {
   background-color: #0063c1;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__boton {
+    width: auto;
+  }
 }
 /*# sourceMappingURL=app.css.map */

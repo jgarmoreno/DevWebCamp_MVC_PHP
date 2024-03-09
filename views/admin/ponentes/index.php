@@ -5,3 +5,4 @@
         <i class="fa-solid fa-circle-plus"></i>
         Inscribir ponente
     </a>
+</div>
