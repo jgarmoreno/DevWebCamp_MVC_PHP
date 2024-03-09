@@ -404,7 +404,10 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.formulario__icono i {
+.formulario__icono svg {
+  width: 65%;
+}
+.formulario__icono i, .formulario__icono svg {
   color: #FFFFFF;
   font-size: 2rem;
 }
@@ -879,6 +882,9 @@ h3 {
     justify-content: flex-end;
     margin-bottom: 5rem;
   }
+}
+.dashboard__contenedor-boton i {
+  margin-right: 0.5rem;
 }
 .dashboard__boton {
   background-color: #007df4;
