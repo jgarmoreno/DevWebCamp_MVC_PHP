@@ -25,6 +25,17 @@
         <label for="imagen" class="formulario__label">Imagen</label>
         <input type="file" class="formulario__input formulario__input--file" id="imagen" name="imagen">
     </div>
+
+    <?php if(isset($ponente->imagen_actual)) { ?>
+        <p class="formulario__texto">Imagen actual</p>
+        <div class="formulario__imagen">
+            <picture>
+                <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.webp" type="image/webp">
+                <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.png" type="image/png">
+                <img src="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.png" alt="Imagen ponente">
+            </picture>
+        </div>
+    <?php } ?>
 </fieldset>
 
 <fieldset class="formulario__fieldset">
@@ -48,7 +59,7 @@
                 <i class="fa-brands fa-facebook"></i>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[facebook]" placeholder="Facebook" value="<?php echo $ponente->facebook ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[facebook]" placeholder="Facebook" value="<?php echo $redes->facebook ?? '';?>">
         </div>
     </div>
 
@@ -58,7 +69,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[x]" placeholder="X" value="<?php echo $ponente->x ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[x]" placeholder="X" value="<?php echo $redes->x ?? '';?>">
         </div>
     </div>
 
@@ -68,7 +79,7 @@
                 <i class="fa-brands fa-youtube"></i>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[youtube]" placeholder="Youtube" value="<?php echo $ponente->youtube ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[youtube]" placeholder="Youtube" value="<?php echo $redes->youtube ?? '';?>">
         </div>
     </div>
 
@@ -78,7 +89,7 @@
                 <i class="fa-brands fa-instagram"></i>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[instagram]" placeholder="Instagram" value="<?php echo $ponente->instagram ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[instagram]" placeholder="Instagram" value="<?php echo $redes->instagram ?? '';?>">
         </div>
     </div>
 
@@ -88,7 +99,7 @@
                 <i class="fa-brands fa-tiktok"></i>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[tiktok]" placeholder="Tiktok" value="<?php echo $ponente->tiktok ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[tiktok]" placeholder="Tiktok" value="<?php echo $redes->tiktok ?? '';?>">
         </div>
     </div>
 
@@ -98,7 +109,7 @@
                 <i class="fa-brands fa-github"></i>
             </div>
             
-            <input type="text" class="formulario__input--sociales" name="redes[github]" placeholder="GitHub" value="<?php echo $ponente->github ?? '';?>">
+            <input type="text" class="formulario__input--sociales" name="redes[github]" placeholder="GitHub" value="<?php echo $redes->github ?? '';?>">
         </div>
     </div>
 </fieldset>

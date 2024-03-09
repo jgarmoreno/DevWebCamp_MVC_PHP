@@ -8,6 +8,12 @@
 
         let tags = [];
 
+        // Recuperar tags del input oculto (editar ponente)
+        if(tagsInputHidden.value !== '') {
+            tags = tagsInputHidden.value.split(',');
+            mostrarTags();
+        }
+
         // Escuchar los cambios en el input
         tagsInput.addEventListener('keypress', guardarTag);
 

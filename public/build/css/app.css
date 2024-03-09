@@ -411,7 +411,7 @@ h3 {
   color: #FFFFFF;
   font-size: 2rem;
 }
-.formulario__label {
+.formulario__label, .formulario__texto {
   display: block;
   font-size: 1.8rem;
   color: rgba(26, 27, 21, 0.8);
@@ -428,6 +428,12 @@ h3 {
   flex: 1;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.formulario__texto {
+  margin-top: 3rem;
+}
+.formulario__imagen {
+  max-width: 20rem;
 }
 .formulario__listado {
   margin: 0;

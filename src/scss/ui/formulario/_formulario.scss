@@ -43,7 +43,7 @@
             font-size: 2rem;
         }
     }
-    &__label {
+    &__label, &__texto {
         display: block;
         font-size: 1.8rem;
         color: rgba(v.$negro, .8);
@@ -62,6 +62,12 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;  
         }
+    }
+    &__texto {
+        margin-top: 3rem;
+    }
+    &__imagen {
+        max-width: 20rem;
     }
     &__listado {
         @include m.tags;
