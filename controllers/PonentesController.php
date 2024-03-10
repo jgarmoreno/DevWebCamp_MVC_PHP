@@ -85,8 +85,6 @@ class PonentesController {
                 if($resultado) {
                     header('Location: /admin/ponentes');
                 }
-            } else {
-
             }
         }
 

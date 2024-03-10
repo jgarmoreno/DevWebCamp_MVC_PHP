@@ -160,3 +160,16 @@
         cursor: pointer;
     }
 }
+@mixin btn_secundario($color, $padding, $tamaño_fuente) {
+    color: $color;
+    padding: $padding;
+    font-size: $tamaño_fuente;
+    border: 1px solid $color;
+    border-radius: 1rem;
+    transition: 300ms background-color ease-in-out, 300ms color ease;
+    &:hover {
+        background-color: $color;
+        color: v.$blanco;
+        cursor: pointer;
+    }
+}

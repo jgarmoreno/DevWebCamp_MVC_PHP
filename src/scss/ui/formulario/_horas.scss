@@ -1,0 +1,14 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.horas {
+    @include m.reset-lista;
+    @include m.grid(1, 1rem);
+    @include m.tablet {
+        @include m.grid(2, 1rem);
+    }
+    &__hora {
+        @include m.btn_secundario(lighten(v.$gris-oscuro, 27%), 1.2rem, 1.8rem);
+        text-align: center;
+    }
+}

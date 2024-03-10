@@ -16,30 +16,24 @@
 
     &__enlace {
         color: v.$azul;
-        font-size: 1.4rem;
         font-weight: v.$bold;
 
         &--texto {
-            padding: .8rem;
-            border-radius: 1rem;
-            border: 1px solid v.$azul;
-            transition: 300ms background-color ease-in-out, 300ms color ease;
-            &:hover {
-                background-color: v.$azul;
-                color: v.$blanco;
-            }
+            @include m.btn_secundario(lighten(v.$gris, 22%), 0.8rem, 1.4rem);
         }
         &--actual {
-            color: v.$gris;
+            color: lighten(v.$azul, 7%);
             font-weight: v.$bold;
+            font-size: 1.7rem;
             display: none;
             @include m.tablet {
                 display: inline;
             }
         }
         &--numero {
-            color: v.$azul;
+            color: lighten(v.$gris, 27%);
             font-weight: v.$bold;
+            font-size: 1.5rem;
             display: none;
             @include m.tablet {
                 display: inline;
