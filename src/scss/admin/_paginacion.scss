@@ -8,6 +8,7 @@
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 
     @include m.tablet {
         justify-content: flex-end;
@@ -15,7 +16,7 @@
 
     &__enlace {
         color: v.$azul;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
 
         &--texto {
             padding: 1rem;
@@ -25,6 +26,22 @@
             &:hover {
                 background-color: v.$azul;
                 color: v.$blanco;
+            }
+        }
+        &--actual {
+            color: v.$gris;
+            font-weight: v.$bold;
+            display: none;
+            @include m.tablet {
+                display: inline;
+            }
+        }
+        &--numero {
+            color: v.$azul;
+            font-weight: v.$bold;
+            display: none;
+            @include m.tablet {
+                display: inline;
             }
         }
     }
