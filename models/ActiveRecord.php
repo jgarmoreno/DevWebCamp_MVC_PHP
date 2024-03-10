@@ -131,6 +131,16 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // Obtener total de registros de una tabla (contarlos)-> Esta función optimiza enormemente, porque lo tiras desde SQL. Si no, habría que traer todos los registros [all()] para luego ejecutar
+    // un count a la variable que asignes la función all().Si hay mil registros cargaría los mil y luego los contaría. En SQL se pueden contar sin necesidad de cargar todos los registros.
+    public static function total() {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
+
     // crea un nuevo registro
     public function crear() {
         // Sanitizar los datos
