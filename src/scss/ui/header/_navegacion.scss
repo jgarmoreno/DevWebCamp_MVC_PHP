@@ -14,10 +14,12 @@
         text-transform: uppercase;
         font-weight: v.$black;
         text-align: center;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
 
         &:hover {
             background-color: v.$blanco;
             color: v.$azul;
+            font-weight: v.$bold;
         }
     }
 }

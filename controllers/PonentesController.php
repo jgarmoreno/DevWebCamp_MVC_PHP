@@ -15,21 +15,24 @@ class PonentesController {
         if(!$pagina_actual || $pagina_actual < 1) {
             header('Location: /admin/ponentes?page=1');
         }
-        $registros_por_pagina = 10;
+        $registros_por_pagina = 5;
         $total_registros = Ponente::total();
 
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total_registros);
 
-        debuguear($paginacion->pagina_siguiente());
-        
-        $ponentes = Ponente::all();
+        if($paginacion->total_paginas() < $pagina_actual) {
+            header('Location: /admin/ponentes?page=1');
+        }
+      
+        $ponentes = Ponente::paginar($registros_por_pagina, $paginacion->offset());
 
         if(!is_admin()) {
             header('Location: /login');
         }
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes',
-            'ponentes' => $ponentes
+            'ponentes' => $ponentes,
+            'paginacion' => $paginacion->paginacion()
         ]);
     }
     public static function crear (Router $router) {

@@ -33,6 +33,7 @@
     }
     &__submit--logout {
         @include m.enlace;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
     }
     &__grid {
         display: flex;
@@ -94,6 +95,7 @@
         @include m.boton(v.$azul, v.$blanco);
         text-transform: uppercase;
         font-size: 1.4rem;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
         @include m.tablet {
             width: auto;
         }

@@ -23,6 +23,7 @@
     }
     &__enlace {
         @include m.enlace;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
     }
     &__contenido {
         padding-top: 10rem;

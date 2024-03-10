@@ -550,6 +550,7 @@ h3 {
   font-weight: 700;
   background-color: transparent;
   border: none;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
 }
 .header__enlace:hover {
   color: #007df4;
@@ -669,10 +670,12 @@ h3 {
   text-transform: uppercase;
   font-weight: 900;
   text-align: center;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
 }
 .navegacion__enlace:hover {
   background-color: #FFFFFF;
   color: #007df4;
+  font-weight: 700;
 }
 
 .footer {
@@ -830,6 +833,7 @@ h3 {
   font-weight: 700;
   background-color: transparent;
   border: none;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
 }
 .dashboard__submit--logout:hover {
   color: #007df4;
@@ -906,6 +910,7 @@ h3 {
   display: inline-block;
   text-transform: uppercase;
   font-size: 1.4rem;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
 }
 .dashboard__boton:hover {
   background-color: #0063c1;
@@ -965,5 +970,33 @@ h3 {
 }
 .table__accion:hover {
   cursor: pointer;
+}
+
+.paginacion {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .paginacion {
+    justify-content: flex-end;
+  }
+}
+.paginacion__enlace {
+  color: #007df4;
+  font-size: 1.6rem;
+}
+.paginacion__enlace--texto {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #007df4;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
+}
+.paginacion__enlace--texto:hover {
+  background-color: #007df4;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=app.css.map */
