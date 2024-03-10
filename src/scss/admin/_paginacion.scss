@@ -17,10 +17,11 @@
     &__enlace {
         color: v.$azul;
         font-size: 1.4rem;
+        font-weight: v.$bold;
 
         &--texto {
-            padding: 1rem;
-            border-radius: .5rem;
+            padding: .8rem;
+            border-radius: 1rem;
             border: 1px solid v.$azul;
             transition: 300ms background-color ease-in-out, 300ms color ease;
             &:hover {

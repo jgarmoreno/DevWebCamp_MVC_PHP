@@ -989,10 +989,11 @@ h3 {
 .paginacion__enlace {
   color: #007df4;
   font-size: 1.4rem;
+  font-weight: 700;
 }
 .paginacion__enlace--texto {
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
   border: 1px solid #007df4;
   transition: 300ms background-color ease-in-out, 300ms color ease;
 }
