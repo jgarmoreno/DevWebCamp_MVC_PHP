@@ -138,6 +138,20 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // Busqueda Where con Multiples Columnas
+    public static function whereArray($array = []) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ";
+        foreach($array as $key => $value) {
+            if($key == array_key_last($array)) {
+                $query .= "${key} = '${value}'";
+            } else {
+                $query .= "${key} = '${value}' AND ";
+            }
+        }
+        $resultado = self::consultarSQL($query);
+        return array_shift( $resultado ) ;
+    }
+
     // Obtener total de registros de una tabla (contarlos)-> Esta función optimiza enormemente, porque lo tiras desde SQL. Si no, habría que traer todos los registros [all()] para luego ejecutar
     // un count a la variable que asignes la función all().Si hay mil registros cargaría los mil y luego los contaría. En SQL se pueden contar sin necesidad de cargar todos los registros.
     public static function total() {
