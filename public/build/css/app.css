@@ -540,7 +540,7 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.horas__hora {
+.horas__hora, .horas__hora--seleccionada {
   color: #4c6896;
   padding: 1.2rem;
   font-size: 1.8rem;
@@ -549,10 +549,25 @@ h3 {
   transition: 300ms background-color ease-in-out, 300ms color ease;
   text-align: center;
 }
-.horas__hora:hover {
+.horas__hora:hover, .horas__hora--seleccionada:hover {
   background-color: #4c6896;
   color: #FFFFFF;
   cursor: pointer;
+}
+.horas__hora--seleccionada {
+  background-color: #00c8c2;
+  color: #FFFFFF;
+  border: none;
+}
+.horas__hora--deshabilitada {
+  background-color: #d8dde3;
+  border: 1px solid #d8dde3;
+  color: #b4bdc9;
+}
+.horas__hora--deshabilitada:hover {
+  cursor: no-drop;
+  background-color: #d8dde3;
+  color: #b4bdc9;
 }
 
 .header {

@@ -149,7 +149,7 @@ class ActiveRecord {
             }
         }
         $resultado = self::consultarSQL($query);
-        return array_shift( $resultado ) ;
+        return $resultado;
     }
 
     // Obtener total de registros de una tabla (contarlos)-> Esta función optimiza enormemente, porque lo tiras desde SQL. Si no, habría que traer todos los registros [all()] para luego ejecutar

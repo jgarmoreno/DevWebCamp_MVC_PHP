@@ -10,5 +10,22 @@
     &__hora {
         @include m.btn_secundario(lighten(v.$gris-oscuro, 27%), 1.2rem, 1.8rem);
         text-align: center;
+
+        &--seleccionada {
+            @extend .horas__hora;
+            background-color: v.$secundario;
+            color: v.$blanco;
+            border: none;
+        }
+        &--deshabilitada {
+            background-color: lighten(v.$gris, 40%);
+            border: 1px solid lighten(v.$gris, 40%);
+            color: lighten(v.$gris, 28%);
+            &:hover {
+                cursor: no-drop;
+                background-color: lighten(v.$gris, 40%);
+                color: lighten(v.$gris, 28%);
+            }
+        }
     }
 }
