@@ -5,7 +5,8 @@
         let ponentes = [];
         let ponentesFiltrados = [];
 
-        const listadoPonentes = document.querySelector('#listado-ponentes')
+        const listadoPonentes = document.querySelector('#listado-ponentes');
+        const ponenteHidden = document.querySelector('[name = "ponente_id"]');
 
         obtenerPonentes();
 
@@ -56,6 +57,7 @@
                 ponenteHTML.classList.add('listado-ponentes__ponente');
                 ponenteHTML.textContent = ponente.nombre;
                 ponenteHTML.dataset.ponenteId = ponente.id;
+                ponenteHTML.onclick = seleccionarPonente;
 
                 // Añadir al DOM
                 listadoPonentes.appendChild(ponenteHTML);
@@ -66,6 +68,22 @@
                 noResultados.textContent = 'Sin resultados';
                 listadoPonentes.appendChild(noResultados);
             }
+        }
+
+        function seleccionarPonente(e) {
+            const ponente = e.target;
+
+            // Eliminar clase previa
+            const ponentePrevio = document.querySelector('.listado-ponentes__ponente--seleccionado');
+            if(ponentePrevio) {
+                ponentePrevio.classList.remove('listado-ponentes__ponente--seleccionado');
+            }
+
+            // Añadir clase al clicar
+            ponente.classList.add('listado-ponentes__ponente--seleccionado');
+
+            // Asignar valor oculto
+            ponenteHidden.value = ponente.dataset.ponenteId;
         }
     }
 })();

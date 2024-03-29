@@ -1074,4 +1074,32 @@ h3 {
     display: inline;
   }
 }
+
+.listado-ponentes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-ponentes__ponente, .listado-ponentes__ponente--seleccionado {
+  color: #4c6896;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border: 1px solid #4c6896;
+  border-radius: 1rem;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
+  text-align: center;
+}
+.listado-ponentes__ponente:hover, .listado-ponentes__ponente--seleccionado:hover {
+  background-color: #4c6896;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.listado-ponentes__ponente--seleccionado {
+  background-color: #00c8c2;
+  color: #FFFFFF;
+  border: none;
+}
 /*# sourceMappingURL=app.css.map */
