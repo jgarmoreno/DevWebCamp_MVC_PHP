@@ -24,11 +24,11 @@ $router->post('/logout', [AuthController::class, 'logout']);
 $router->get('/registro', [AuthController::class, 'registro']);
 $router->post('/registro', [AuthController::class, 'registro']);
 
-// Formulario de olvide mi password
+// Olvidé contraseña
 $router->get('/olvide', [AuthController::class, 'olvide']);
 $router->post('/olvide', [AuthController::class, 'olvide']);
 
-// Colocar el nuevo password
+// Reestablecer cuenta
 $router->get('/reestablecer-cuenta', [AuthController::class, 'reestablecer']);
 $router->post('/reestablecer-cuenta', [AuthController::class, 'reestablecer']);
 
@@ -36,9 +36,15 @@ $router->post('/reestablecer-cuenta', [AuthController::class, 'reestablecer']);
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 
+// APIs
+$router->get('/api/eventos-horario', [APIEventos::class, 'index']);
+$router->get('/api/ponentes', [APIPonentes::class, 'index']);
+$router->get('/api/ponente', [APIPonentes::class, 'ponente']);
+
 // Área de administración
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
+// Ponentes
 $router->get('/admin/ponentes', [PonentesController::class, 'index']);
 $router->get('/admin/ponentes/crear', [PonentesController::class, 'crear']);
 $router->post('/admin/ponentes/crear', [PonentesController::class, 'crear']);
@@ -46,20 +52,19 @@ $router->get('/admin/ponentes/editar', [PonentesController::class, 'editar']);
 $router->post('/admin/ponentes/editar', [PonentesController::class, 'editar']);
 $router->post('/admin/ponentes/eliminar', [PonentesController::class, 'eliminar']);
 
+// Eventos
 $router->get('/admin/eventos', [EventosController::class, 'index']);
 $router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
 $router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
-
-$router->get('/api/eventos-horario', [APIEventos::class, 'index']);
-$router->get('/api/ponentes', [APIPonentes::class, 'index']);
-
 $router->get('/admin/eventos/editar', [EventosController::class, 'editar']);
 $router->post('/admin/eventos/editar', [EventosController::class, 'editar']);
 $router->post('/admin/eventos/eliminar', [EventosController::class, 'eliminar']);
 
+// Inscritos
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
+// Ventajas
 $router->get('/admin/ventajas', [VentajasController::class, 'index']);
 
-
+// Comprobar URLs
 $router->comprobarRutas();

@@ -6,3 +6,69 @@
         Añadir evento
     </a>
 </div>
+
+<div class="dashboard__contenedor">
+    <?php if(!empty($eventos)) { ?>
+        <table class="table">
+            <thead class="table__thead">
+                <tr class="table__tr">
+                    <th scope="col" class="table__th">Evento</th>
+                    <th scope="col" class="table__th">Imagen</th>
+                    <th scope="col" class="table__th">Categoría</th>
+                    <th scope="col" class="table__th">Día y hora</th>
+                    <th scope="col" class="table__th">Ponente</th>
+                    <th scope="col" class="table__th"></th>
+                </tr>
+            </thead>
+            <tbody class="tablet__tbody">
+                <?php foreach($eventos as $evento) { ?>
+                    <tr class="table__tr">
+                        <td class="table__td">
+                            <?php echo $evento->nombre;?>
+                        </td>
+                        <td class="table__td">
+                        <?php if(isset($evento->imagen)) { ?>
+                            <div class="formulario__imagen">
+                                <picture>
+                                    <source srcset="<?php echo $_ENV['HOST'] . '/images/eventos/' . $evento->imagen;?>.webp" type="image/webp">
+                                    <source srcset="<?php echo $_ENV['HOST'] . '/images/eventos/' . $evento->imagen;?>.png" type="image/png">
+                                    <img src="<?php echo $_ENV['HOST'] . '/images/eventos/' . $evento->imagen;?>.png" alt="Imagen evento">
+                                </picture>
+                            </div>
+                        <?php } ?>
+                        </td>
+                        <td class="table__td">
+                            <?php echo $evento->categoria->nombre;?> <!-- Ojo aquí, no es categoria_id, en eventos controller se asocia "categoria" en un foreach, para obtener nombre -->
+                        </td>
+                        <td class="table__td">
+                            <?php echo $evento->dia->nombre . " | " . $evento->hora->hora;?> <!-- Ojo aquí, no es dia_id, en eventos controller se asocia "dia" en un foreach, para obtener nombre -->
+                        </td>
+                        <td class="table__td">
+                            <?php echo $evento->ponente->nombre . "  " . $evento->ponente->apellido;?> <!-- Ojo aquí, no es dia_id, en eventos controller se asocia "dia" en un foreach, para obtener nombre -->
+                        </td>
+                        <td class="table__td--accionesEventos">
+                            <a class="table__accion table__accion--editar" href="/admin/eventos/editar?id=<?php echo $evento->id;?>">
+                                <i class="fa-solid fa-pencil"></i>
+                                Editar
+                            </a>
+                            <form method="POST" action="/admin/eventos/eliminar" class="table__formulario">
+                                <input type="hidden" name="id" value="<?php echo $evento->id;?>">
+                                <button class="table__accion table__accion--eliminar" type="submit">
+                                    <i class="fa-solid fa-circle-xmark"></i>    
+                                    Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    <?php } else { ?>
+        <p class="text-center">No hay ningún evento registrado</p>
+    <?php } ?>
+
+</div>
+
+<?php
+    echo $paginacion;
+?>

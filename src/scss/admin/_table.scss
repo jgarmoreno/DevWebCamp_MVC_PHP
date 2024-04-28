@@ -27,6 +27,15 @@
             gap: 3rem;
             align-items: center;
         }
+        &--accionesEventos {
+            @extend .table__td--acciones;
+            min-height: 15rem;
+        }
+        .formulario__imagen {
+            max-width: 10rem;
+            width: 100%;
+            height: auto;
+        }
     }
     &__accion {
         all: unset;

@@ -996,14 +996,22 @@ h3 {
 .table__tr:nth-child(even) {
   background-color: #F8FAFC;
 }
-.table__td, .table__td--acciones {
+.table__td, .table__td--acciones, .table__td--accionesEventos {
   padding: 1.5rem 1rem;
 }
-.table__td--acciones {
+.table__td--acciones, .table__td--accionesEventos {
   display: flex;
   justify-content: flex-end;
   gap: 3rem;
   align-items: center;
+}
+.table__td--accionesEventos {
+  min-height: 15rem;
+}
+.table__td .formulario__imagen, .table__td--acciones .formulario__imagen, .table__td--accionesEventos .formulario__imagen {
+  max-width: 10rem;
+  width: 100%;
+  height: auto;
 }
 .table__accion {
   all: unset;

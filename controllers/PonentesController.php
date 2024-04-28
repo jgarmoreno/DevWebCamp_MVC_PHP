@@ -9,6 +9,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PonentesController {
     public static function index (Router $router) {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
         // Paginación
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
@@ -26,9 +29,6 @@ class PonentesController {
       
         $ponentes = Ponente::paginar($registros_por_pagina, $paginacion->offset());
 
-        if(!is_admin()) {
-            header('Location: /login');
-        }
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes',
             'ponentes' => $ponentes,
@@ -121,6 +121,7 @@ class PonentesController {
             if(!is_admin()) {
                 header('Location: /login');
             }
+
                 // Leer imagen
                 if(!empty($_FILES['imagen']['tmp_name'])) {
                     
@@ -154,7 +155,9 @@ class PonentesController {
                         $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png");
                         $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp");
                     }
+
                     $resultado = $ponente->guardar();
+                    
                     if($resultado) {
                         header('Location: /admin/ponentes');
                     }
@@ -168,11 +171,7 @@ class PonentesController {
             'redes' => json_decode($ponente->redes)
         ]);
     }
-    public static function eliminar (Router $router) {
-        if(!is_admin()) {
-            header('Location: /login');
-        }
-
+    public static function eliminar () {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             if(!is_admin()) {
                 header('Location: /login');
@@ -190,9 +189,6 @@ class PonentesController {
             if($resultado) {
                 header('Location: /admin/ponentes');
             }
-
-            debuguear($ponente);
-
         }
     }
 }
