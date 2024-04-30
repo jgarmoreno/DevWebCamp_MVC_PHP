@@ -4,7 +4,7 @@
     if(tagsInput) {
 
         const tagsDiv = document.querySelector('#tags');
-        const tagsInputHidden = document.querySelector('[name="tags"');
+        const tagsInputHidden = document.querySelector('[name="tags"]');
 
         let tags = [];
 

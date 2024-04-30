@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.devwebcamp {
+    &__grid {
+
+        align-items: center;
+        @include m.contenedor;
+        @include m.grid(1, 0rem);
+        @include m.tablet {
+            @include m.grid(2, 4rem);
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+        text-align: justify;
+        padding: 0 3rem;
+        border-radius: .6rem; 
+        padding: 0;
+
+    }
+    &__imagen {
+        all: unset;
+        display: flex;
+        align-items: center;
+        max-height:46.5rem ;
+        overflow: hidden;
+    }
+    &__contenido {
+        padding: 2rem;
+
+    }
+    &__texto {
+        margin-bottom: 4rem;
+        line-height: 2;
+    }
+
+    &__final {
+        // color: darken(v.$blanco,4%);
+        font-weight: v.$bold;
+        color: v.$blanco;
+        line-height: 5rem;
+        border-radius: .7rem;
+        text-align: center;
+        background-color: v.$azul;
+        margin-top: 5rem;
+        padding: 5rem;
+        @include m.contenedor;
+        text-align: center;
+        @include m.tablet {
+            text-align: justify;
+        }
+        margin-bottom: 0rem;
+    }
+}

@@ -10,11 +10,12 @@ use Controllers\EventosController;
 use Controllers\PonentesController;
 use Controllers\VentajasController;
 use Controllers\DashboardController;
+use Controllers\PaginasController;
 use Controllers\RegistradosController;
 
 $router = new Router();
 
-
+// ** CUENTAS **
 // Login
 $router->get('/login', [AuthController::class, 'login']);
 $router->post('/login', [AuthController::class, 'login']);
@@ -36,12 +37,12 @@ $router->post('/reestablecer-cuenta', [AuthController::class, 'reestablecer']);
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 
-// APIs
+// ** APIs **
 $router->get('/api/eventos-horario', [APIEventos::class, 'index']);
 $router->get('/api/ponentes', [APIPonentes::class, 'index']);
 $router->get('/api/ponente', [APIPonentes::class, 'ponente']);
 
-// Área de administración
+// ** ÁREA DE ADMINISTRACIÓN **
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
 // Ponentes
@@ -65,6 +66,13 @@ $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 // Ventajas
 $router->get('/admin/ventajas', [VentajasController::class, 'index']);
+
+
+// ** ÁREA PÚBLICA **
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/devwebcamp', [PaginasController::class, 'evento']);
+$router->get('/planes', [PaginasController::class, 'planes']);
+$router->get('/workshops-conferencias', [PaginasController::class, 'conferencias']);
 
 // Comprobar URLs
 $router->comprobarRutas();
