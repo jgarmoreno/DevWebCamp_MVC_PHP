@@ -4,6 +4,9 @@
 .agenda {
     padding: 5rem 0;
     @include m.contenedor;
+    h2 span {
+        color: v.$secundario;
+}
 }
 .eventos {
     $modificador: &;
