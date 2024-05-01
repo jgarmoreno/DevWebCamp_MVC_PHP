@@ -25,6 +25,12 @@
         @include m.enlace;
         transition: 300ms background-color ease-in-out, 300ms color ease;
     }
+    &__form {
+        display: flex;
+    }
+    &__submit {
+        @extend .header__enlace;
+    }
     &__contenido {
         padding-top: 10rem;
         @include m.tablet {

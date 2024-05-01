@@ -9,17 +9,24 @@
     }
     &__enlace {
         color: v.$blanco;
-        font-size: 2.2rem;
+        font-size: 2rem;
         padding: 2rem;
         text-transform: uppercase;
         font-weight: v.$black;
         text-align: center;
         transition: 300ms background-color ease-in-out, 300ms color ease;
 
-        &:hover {
+        &--actual {
             background-color: v.$blanco;
             color: v.$azul;
+        }
+        &:hover {
+            background-color: darken( v.$azul, 10);
+            color: v.$blanco;
+        }
+        &--actual, &:hover {
             font-weight: v.$black;
         }
+
     }
 }

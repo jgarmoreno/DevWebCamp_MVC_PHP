@@ -559,6 +559,42 @@ h3 {
   font-weight: 700;
 }
 
+.resumen {
+  background-image: linear-gradient(to right, rgba(0, 125, 244, 0.7), rgba(0, 125, 244, 0.9)), url(../img/bg_numeros.jpg);
+  background-image: linear-gradient(to right, rgba(0, 125, 244, 0.7), rgba(0, 125, 244, 0.9)), image-set(url(../img/bg_numeros.avif) 1x, url(../img/bg_numeros.webp) 1x, url(../img/bg_numeros.jpg) 1x);
+  padding: 12rem 0;
+  background-size: cover;
+  background-position: center;
+}
+.resumen__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .resumen__grid {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.resumen__bloque {
+  text-align: center;
+  color: #FFFFFF;
+}
+.resumen__texto, .resumen__texto--numero {
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+.resumen__texto--numero {
+  font-size: 8rem;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -779,7 +815,7 @@ h3 {
     justify-content: flex-end;
   }
 }
-.header__enlace {
+.header__enlace, .header__submit {
   color: #FFFFFF;
   font-size: 1.4rem;
   text-transform: uppercase;
@@ -788,9 +824,12 @@ h3 {
   border: none;
   transition: 300ms background-color ease-in-out, 300ms color ease;
 }
-.header__enlace:hover {
+.header__enlace:hover, .header__submit:hover {
   color: #007df4;
   cursor: pointer;
+}
+.header__form {
+  display: flex;
 }
 .header__contenido {
   padding-top: 10rem;
@@ -881,6 +920,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
 }
 @media (min-width: 1024px) {
@@ -901,16 +941,22 @@ h3 {
 }
 .navegacion__enlace {
   color: #FFFFFF;
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 2rem;
   text-transform: uppercase;
   font-weight: 900;
   text-align: center;
   transition: 300ms background-color ease-in-out, 300ms color ease;
 }
-.navegacion__enlace:hover {
+.navegacion__enlace--actual {
   background-color: #FFFFFF;
   color: #007df4;
+}
+.navegacion__enlace:hover {
+  background-color: #0063c1;
+  color: #FFFFFF;
+}
+.navegacion__enlace--actual, .navegacion__enlace:hover {
   font-weight: 900;
 }
 
@@ -935,6 +981,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
 }
 @media (min-width: 1024px) {
@@ -1050,6 +1097,7 @@ h3 {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
 }
 @media (min-width: 1024px) {
