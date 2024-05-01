@@ -4,19 +4,19 @@
 
 <section class="resumen">
     <div class="resumen__grid">
-        <div class="resumen__bloque">
+        <div data-aos="fade-up" class="resumen__bloque">
             <p class="resumen__texto--numero"><?php echo $ponentes_total; ?></p>
             <p class="resumen__texto">Speakers</p>
         </div>
-        <div class="resumen__bloque">
+        <div data-aos="fade-down" class="resumen__bloque">
             <p class="resumen__texto--numero"><?php echo $conferencias_total; ?></p>
             <p class="resumen__texto">Conferencias</p>
         </div>
-        <div class="resumen__bloque">
+        <div data-aos="fade-right" class="resumen__bloque">
             <p class="resumen__texto--numero"><?php echo $workshops_total; ?></p>
             <p class="resumen__texto">Workshops</p>
         </div>
-        <div class="resumen__bloque">
+        <div data-aos="fade-left" class="resumen__bloque">
             <p class="resumen__texto--numero">+450</p>
             <p class="resumen__texto">Asistentes</p>
         </div>
@@ -29,7 +29,7 @@
 
     <div class="speakers__grid">
         <?php foreach($ponentes as $ponente) { ?>
-            <div class="speaker">
+            <div <?php aos_animacion();?> class="speaker">
                 <picture>
                     <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.webp" type="image/webp">
                     <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.png" type="image/png">
@@ -91,3 +91,30 @@
 </section>
 
 <div class="mapa" id="mapa"></div>
+
+<section class="entradas">
+    <h2 class="entradas__heading">Entradas <span>/&/</span> Precios</h2>
+    <p class="entradas__descripcion">Elige un plan de pago adaptado a ti</p>
+
+    <div class="entradas__grid">
+        <div <?php aos_animacion(); ?> class="entrada entrada--presencial">
+            <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
+            <p class="entrada__plan">Presencial</p>
+            <p class="entrada__precio">70 €</p>
+        </div>
+        <div <?php aos_animacion(); ?> class="entrada entrada--virtual">
+            <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
+            <p class="entrada__plan">Virtual</p>
+            <p class="entrada__precio">40 €</p>
+        </div>
+        <div <?php aos_animacion(); ?> class="entrada entrada--gratuito">
+            <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
+            <p class="entrada__plan">Gratuito</p>
+            <p class="entrada__precio">0 €</p>
+        </div>
+    </div>
+
+    <div class="entrada__enlace-contenedor">
+        <a href="/planes" class="entrada__enlace">Ver planes de pago</a>
+    </div>
+</section>

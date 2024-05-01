@@ -1,0 +1,88 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.entradas{
+    &__grid {
+        @include m.contenedor-sm;
+        @include m.grid(1, 5rem);
+    }
+    h2 span {
+        color: v.$secundario;
+    }
+}
+
+
+.entrada {
+    width: min(100% - 5rem, 65rem);
+    margin: 0 auto;
+    padding: 6rem;
+    border-radius: 2rem;
+    color: v.$blanco;
+    text-align: center;
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        background-color: v.$blanco;
+        width: 5rem;
+        height: 5rem;
+        top: calc(50% - 2.5rem);
+
+    }
+    &::before {
+        clip-path: circle(50% at 20% 50%);
+        left: 0;
+    }
+    &::after {
+        clip-path: circle(50% at 80% 50%);
+        right: 0;
+    }
+
+    &--presencial {
+        background-color:hsla(0,100%,50%,1);
+        background-image:
+        radial-gradient(at 40% 20%, hsla(209,100%,47%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+        radial-gradient(at 78% 47%, hsla(209,100%,47%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(178,100%,39%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(178,100%,39%,1) 0px, transparent 50%);
+    }
+    &--virtual {
+        background-color: v.$secundario;
+    }
+    &--gratuito {
+        background-color: v.$azul;
+    }
+    &__logo {
+        @include m.logo;
+        @include m.texto-fluido(2rem, 4rem);
+        @include m.tablet {
+            text-align: center;
+        }
+    }
+    &__plan {
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin: 3rem 0 0 0;
+    }
+    &__precio {
+        margin: 3rem 0 0 0;
+        font-weight: v.$black;
+        font-size: 4rem;
+    }
+
+    &__enlace-contenedor {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__enlace {
+        @include m.boton(v.$azul, v.$blanco);
+        width: auto;
+    }
+}

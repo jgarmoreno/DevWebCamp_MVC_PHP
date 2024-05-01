@@ -3,8 +3,8 @@
     <p class="planes__descripcion">Escoge entre todos los paquetes un plan adaptado a ti</p>
 
     <div class="planes__grid">
-        <div class="plan">
-            <h3 class="plan__nombre">Pase gratis</h3>
+        <div <?php aos_animacion();?> class="plan">
+            <h3 class="plan__nombre">Pase gratuito</h3>
             <ul class="plan__lista">
                 <li class="plan__elemento">
                     Acceso virtual a DevWebCamp
@@ -13,7 +13,7 @@
 
             <p class="plan__precio">0 €</p>
         </div>
-        <div class="plan">
+        <div <?php aos_animacion();?> class="plan">
             <h3 class="plan__nombre">Pase presencial</h3>
             <ul class="plan__lista">
                 <li class="plan__elemento">
@@ -41,7 +41,7 @@
 
             <p class="plan__precio">70 €</p>
         </div>
-        <div class="plan">
+        <div <?php aos_animacion();?> class="plan">
             <h3 class="plan__nombre">Pase virtual</h3>
             <ul class="plan__lista">
                 <li class="plan__elemento">

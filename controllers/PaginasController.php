@@ -65,7 +65,7 @@ class PaginasController {
     
 
         $router->render('paginas/planes', [
-            'titulo' => 'Planes de suscripción'
+            'titulo' => 'Planes de pago'
         ]);
     }
 
