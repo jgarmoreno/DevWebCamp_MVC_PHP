@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.pagina_404 {
+
+    &__imagen {
+        margin: 13rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__heading {
+        margin-top: 10rem;
+    }
+
+    &__contenedor {
+        text-align: center;
+    }
+    &__texto {
+        &:nth-child(2) {
+            margin-bottom: 5rem;
+        }
+    }
+    &__enlace {
+        @include m.boton(v.$azul, v.$blanco);
+
+        width: 95%;
+        @include m.tablet {
+            display: inline;
+        }
+    }
+}
