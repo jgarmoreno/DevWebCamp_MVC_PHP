@@ -3,7 +3,7 @@
         <nav class="header__navegacion">
 
         <?php if(is_auth()) { ?>
-            <a href="<?php echo is_admin() ? '/admin/dashboard' : '/finalizar-registro'; ?>" class="header__enlace"><?php echo is_admin() ? 'Administrar' : 'Completa tu compra';?></a>
+            <a href="<?php echo is_admin() ? '/admin/dashboard' : '/finalizar-registro'; ?>" class="header__enlace"><?php echo is_admin() ? 'Administrar' : 'Entradas';?></a>
             <form method="POST" action="/logout" class="header__form">
                 <input type="submit" value="Cerrar sesión" class="header__submit">
             </form>
@@ -32,7 +32,7 @@
                 <a href="/devwebcamp" class="navegacion__enlace <?php echo pagina_actual('/devwebcamp') ? 'navegacion__enlace--actual' : '';?>">DWC</a>
                 <a href="/planes" class="navegacion__enlace <?php echo pagina_actual('/planes') ? 'navegacion__enlace--actual' : '';?>">Planes</a>
                 <a href="/workshops-conferencias" class="navegacion__enlace  <?php echo pagina_actual('/workshops-conferencias') ? 'navegacion__enlace--actual' : '';?>">Workshops / Conferencias</a>
-                <a href="/registro" class="navegacion__enlace  <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : '';?>">Entradas</a>
+                <a href="/registro" class="navegacion__enlace  <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : '';?>">Registro</a>
             </nav>
     </div>        
 </div>

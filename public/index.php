@@ -7,10 +7,11 @@ use Controllers\APIEventos;
 use Controllers\APIPonentes;
 use Controllers\AuthController;
 use Controllers\EventosController;
+use Controllers\PaginasController;
 use Controllers\PonentesController;
+use Controllers\RegistroController;
 use Controllers\VentajasController;
 use Controllers\DashboardController;
-use Controllers\PaginasController;
 use Controllers\RegistradosController;
 
 $router = new Router();
@@ -66,6 +67,15 @@ $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 // Ventajas
 $router->get('/admin/ventajas', [VentajasController::class, 'index']);
+
+// ** REGISTRO PAGO // INSCRIPCIONES **
+$router->get('/finalizar-registro', [RegistroController::class, 'crear']);
+$router->post('/finalizar-registro/gratis', [RegistroController::class, 'gratis']);
+$router->post('/finalizar-registro/pago', [RegistroController::class, 'pagar']);
+$router->get('/finalizar-registro/conferencias', [RegistroController::class, 'conferencias']);
+
+// Entrada virtual
+$router->get('/entrada', [RegistroController::class, 'boletos']);
 
 
 // ** ÁREA PÚBLICA **

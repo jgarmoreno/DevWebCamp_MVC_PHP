@@ -27,9 +27,9 @@
     <h2 class="speakers__heading">Ponentes</h2>
     <p class="speakers__descripcion">Expertos con formación y años de experiencia en diversas áreas del Web Development</p>
 
-    <div class="speakers__grid">
+    <div <?php aos_animacion();?> class="speakers__grid">
         <?php foreach($ponentes as $ponente) { ?>
-            <div <?php aos_animacion();?> class="speaker">
+            <div class="speaker">
                 <picture>
                     <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.webp" type="image/webp">
                     <source srcset="<?php echo $_ENV['HOST'] . '/images/speakers/' . $ponente->imagen;?>.png" type="image/png">
@@ -97,17 +97,17 @@
     <p class="entradas__descripcion">Elige un plan de pago adaptado a ti</p>
 
     <div class="entradas__grid">
-        <div <?php aos_animacion(); ?> class="entrada entrada--presencial">
+        <div class="entrada entrada--presencial">
             <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
             <p class="entrada__plan">Presencial</p>
             <p class="entrada__precio">70 €</p>
         </div>
-        <div <?php aos_animacion(); ?> class="entrada entrada--virtual">
+        <div class="entrada entrada--virtual">
             <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
             <p class="entrada__plan">Virtual</p>
             <p class="entrada__precio">40 €</p>
         </div>
-        <div <?php aos_animacion(); ?> class="entrada entrada--gratuito">
+        <div class="entrada entrada--gratuito">
             <h4 class="entrada__logo">&#60;DevWebCamp /></h4>
             <p class="entrada__plan">Gratuito</p>
             <p class="entrada__precio">0 €</p>
