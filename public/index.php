@@ -73,6 +73,7 @@ $router->get('/finalizar-registro', [RegistroController::class, 'crear']);
 $router->post('/finalizar-registro/gratis', [RegistroController::class, 'gratis']);
 $router->post('/finalizar-registro/pago', [RegistroController::class, 'pagar']);
 $router->get('/finalizar-registro/conferencias', [RegistroController::class, 'conferencias']);
+$router->post('/finalizar-registro/conferencias', [RegistroController::class, 'conferencias']);
 
 // Entrada virtual
 $router->get('/entrada', [RegistroController::class, 'boletos']);

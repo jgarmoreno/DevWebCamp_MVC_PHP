@@ -1111,7 +1111,7 @@ h3 {
   font-weight: 700;
   cursor: pointer;
 }
-.formulario__submit {
+.formulario__submit, .formulario__submit--registrar, .formulario__submit--full {
   background-color: #007df4;
   padding: 1.5rem 4rem;
   color: #FFFFFF;
@@ -1126,17 +1126,17 @@ h3 {
   display: inline-block;
   border-radius: 0.4rem;
 }
-.formulario__submit:hover {
+.formulario__submit:hover, .formulario__submit--registrar:hover, .formulario__submit--full:hover {
   background-color: #0063c1;
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .formulario__submit {
+  .formulario__submit, .formulario__submit--registrar, .formulario__submit--full {
     width: auto;
     align-self: flex-start;
   }
 }
-.formulario__submit--registrar {
+.formulario__submit--registrar, .formulario__submit--full {
   width: 100%;
 }
 
@@ -1862,5 +1862,24 @@ h3 {
 }
 .registro__eliminar:hover {
   cursor: pointer;
+}
+.registro__texto {
+  text-align: center;
+}
+.registro__regalo {
+  margin-top: 3rem;
+}
+.registro__label {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.registro__select {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #64748B;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 /*# sourceMappingURL=app.css.map */

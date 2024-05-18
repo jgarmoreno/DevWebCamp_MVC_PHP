@@ -174,18 +174,30 @@ class ActiveRecord {
 
     // crea un nuevo registro
     public function crear() {
+        // Definir columnas que esperan enteros
+        $columnasEnteras = ['regalo_id']; // Actualiza este arreglo según tus necesidades
+    
         // Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
-
+    
         // Insertar en la base de datos
-        $query = " INSERT INTO " . static::$tabla . " ( ";
+        $query = "INSERT INTO " . static::$tabla . " ( ";
         $query .= join(', ', array_keys($atributos));
-        $query .= " ) VALUES (' "; 
-        $query .= join("', '", array_values($atributos));
-        $query .= " ') ";
-
+        $query .= " ) VALUES ( "; 
+    
+        // Aplicar NULLIF a los valores de columnas enteras
+        $valores = array_map(function($columna, $valor) use ($columnasEnteras) {
+            if (in_array($columna, $columnasEnteras) && $valor === '') {
+                return "NULL";
+            }
+            return "'" . $valor . "'";
+        }, array_keys($atributos), array_values($atributos));
+    
+        $query .= join(", ", $valores);
+        $query .= " ) ";
+    
         // debuguear($query); // Descomentar si no te funciona algo
-
+    
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [

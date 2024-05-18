@@ -84,7 +84,10 @@
             width: auto;
             align-self: flex-start;
         }
-        &--registrar {
+        &--registrar,
+        &--full
+        {
+            @extend .formulario__submit;
             width: 100%;
         }
     }
