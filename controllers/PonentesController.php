@@ -11,6 +11,7 @@ class PonentesController {
     public static function index (Router $router) {
         if(!is_admin()) {
             header('Location: /login');
+            return;
         }
         // Paginación
         $pagina_actual = $_GET['page'];
@@ -38,6 +39,7 @@ class PonentesController {
     public static function crear (Router $router) {
         if(!is_admin()) {
             header('Location: /login');
+            return;
         }
         $alertas = [];
         $ponente = new Ponente;
@@ -45,6 +47,7 @@ class PonentesController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             if(!is_admin()) {
                 header('Location: /login');
+                return;
             }
             // Leer imagen
             if(!empty($_FILES['imagen']['tmp_name'])) {
@@ -84,6 +87,7 @@ class PonentesController {
                 $resultado = $ponente->guardar();
                 if($resultado) {
                     header('Location: /admin/ponentes');
+                    return;
                 }
             }
         }
@@ -99,6 +103,7 @@ class PonentesController {
     public static function editar (Router $router) {
         if(!is_admin()) {
             header('Location: /login');
+            return;
         }
         $alertas = [];
         // Validar el id
@@ -107,12 +112,14 @@ class PonentesController {
 
         if(!$id) {
             header('Location: /admin/ponentes');
+            return;
         }
         // Obtener ponente a través del id
         $ponente = Ponente::find($id);
 
         if(!$ponente) {
-            header('Location: /admin/ponentes'); 
+            header('Location: /admin/ponentes');
+            return;
         }
 
         $ponente->imagen_actual = $ponente->imagen;
@@ -120,6 +127,7 @@ class PonentesController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             if(!is_admin()) {
                 header('Location: /login');
+                return;
             }
 
                 // Leer imagen

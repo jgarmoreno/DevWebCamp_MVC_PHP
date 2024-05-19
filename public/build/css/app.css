@@ -512,6 +512,10 @@ h3 {
 .agenda h2 span {
   color: #00c8c2;
 }
+.agenda__heading--superior {
+  text-align: center;
+  margin-top: 0;
+}
 
 .eventos__heading {
   color: #007df4;
@@ -574,6 +578,16 @@ h3 {
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
+}
+.evento__aforo, .evento__aforo--agotado {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 2rem 0;
+}
+.evento__aforo--agotado {
+  color: rgb(169, 0, 0);
 }
 .evento__imagen-autor {
   width: 5rem;
