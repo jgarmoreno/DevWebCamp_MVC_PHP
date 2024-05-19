@@ -1,0 +1,111 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.bloques {
+    @include m.contenedor;
+    @include m.tablet {
+        margin-top: 10rem;
+    }
+
+    &__grid {
+        @include m.grid(1, 3rem);
+        @include m.desktop {
+            @include m.grid(2, 3rem);
+        }
+    }
+
+}
+
+.bloque {
+    @include m.bg-gradient(v.$gris-oscuro);
+    padding: 2rem;
+    color: v.$blanco;
+    border-radius: 1rem;
+
+    &:hover {
+        background-image: linear-gradient(to left top, lighten(v.$gris-oscuro, 25%), v.$gris-oscuro);
+    }
+    &__grid {
+        @include m.grid(2, 3rem);
+    }
+    &__registrados {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    &__heading {
+        font-size: 3rem;
+        margin: 1rem 0 2rem 0;
+    }
+    &__contenido {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__icono {
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+        &--riesgo {
+            font-size: 3rem;
+        }
+    }
+    &__totales {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4rem;
+        @include m.desktop {
+            margin-left: 8rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &__texto {
+        margin: 1rem 0 1rem 1.5rem;
+        display: block;
+        span {
+            font-weight: v.$bold;
+            text-transform: uppercase;
+            color: lighten(v.$gris,5);
+
+        }
+        &--cantidad, &--total, &--totalReg, &--agotado, &--riesgo {
+            font-size: 7rem;
+            font-weight: v.$bold;
+            text-align: center;
+            margin:0;
+        }
+        &--cantidad {
+            color: v.$verde;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @include m.desktop {
+                margin-top: 8rem;
+            }
+
+        }
+        &--agotado {
+            color: lighten(v.$rojo, 15);
+        }
+        &--riesgo {
+            color: v.$naranja;
+        }
+        &--total, &--totalReg {
+            margin-bottom: 2rem;
+            i {
+                margin-left: 3rem;
+                font-size: 7rem;
+            }
+        }
+        &--totalReg {
+            @include m.desktop {
+                margin: 2rem 0;
+            }
+        }
+
+    }
+
+}

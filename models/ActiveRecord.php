@@ -119,9 +119,9 @@ class ActiveRecord {
 
     // Obtener Registros con cierta cantidad
     public static function get($limite) {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite} ORDER BY id DESC" ;
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${limite}" ;
         $resultado = self::consultarSQL($query);
-        return array_shift( $resultado ) ;
+        return $resultado;
     }
 
     // Paginar los registros
@@ -137,6 +137,36 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
+    // Busqueda Where con Columna 
+    public static function where_array($columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+    // Busqueda Contar Where con Columna y Condición
+    public static function whereCond($columna='', $condicion='', $valor='') {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} ${condicion} ${valor}";
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
+    // Busqueda Contar Where con Columna y Condición
+    public static function whereCont($columna='', $condicion='', $valor='') {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla . " WHERE ${columna} ${condicion} ${valor}";
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
+    // Busqueda Where con Columna y Condición
+    public static function whereCondSeg($columna='', $condicion='', $condicion_seg='', $valor='', $valor_seg='') {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla . " WHERE ${columna} ${condicion} ${valor} AND ${columna} ${condicion_seg} ${valor_seg}";
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
 
     // Devuelve los registros seteando un orden
     public static function ordenar($columna, $orden) {
@@ -145,6 +175,20 @@ class ActiveRecord {
         return $resultado; 
     }
 
+    // Devuelve los registros seteando un orden
+    public static function ordenarLimite($columna, $orden, $limite) {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY ${columna} ${orden} LIMIT ${limite}";
+        $resultado = self::consultarSQL($query);
+        return $resultado; 
+    }
+
+    // Devuelve los registros seteando un orden
+    public static function ordenarLimiteAgotado($columna, $orden, $limite) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} > 0 ORDER BY ${columna} ${orden} LIMIT ${limite}";
+        $resultado = self::consultarSQL($query);
+        return $resultado; 
+    }
+    
     // Busqueda Where con Multiples Columnas
     public static function whereArray($array = []) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ";

@@ -1791,6 +1791,123 @@ h3 {
   border: none;
 }
 
+.bloques {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .bloques {
+    margin-top: 10rem;
+  }
+}
+.bloques__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 1024px) {
+  .bloques__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bloque {
+  background-image: linear-gradient(to left top, #1E293B, #384c6e);
+  padding: 2rem;
+  color: #FFFFFF;
+  border-radius: 1rem;
+}
+.bloque:hover {
+  background-image: linear-gradient(to left top, #496490, #1E293B);
+}
+.bloque__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.bloque__registrados {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.bloque__heading {
+  font-size: 3rem;
+  margin: 1rem 0 2rem 0;
+}
+.bloque__contenido {
+  display: flex;
+  justify-content: flex-start;
+}
+.bloque__icono {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+.bloque__icono--riesgo {
+  font-size: 3rem;
+}
+.bloque__totales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4rem;
+}
+@media (min-width: 1024px) {
+  .bloque__totales {
+    margin-left: 8rem;
+    margin-bottom: 2rem;
+  }
+}
+.bloque__texto {
+  margin: 1rem 0 1rem 1.5rem;
+  display: block;
+}
+.bloque__texto span {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #708198;
+}
+.bloque__texto--cantidad, .bloque__texto--total, .bloque__texto--totalReg, .bloque__texto--agotado, .bloque__texto--riesgo {
+  font-size: 7rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+.bloque__texto--cantidad {
+  color: #02db02;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .bloque__texto--cantidad {
+    margin-top: 8rem;
+  }
+}
+.bloque__texto--agotado {
+  color: #f60000;
+}
+.bloque__texto--riesgo {
+  color: #fc9003;
+}
+.bloque__texto--total, .bloque__texto--totalReg {
+  margin-bottom: 2rem;
+}
+.bloque__texto--total i, .bloque__texto--totalReg i {
+  margin-left: 3rem;
+  font-size: 7rem;
+}
+@media (min-width: 1024px) {
+  .bloque__texto--totalReg {
+    margin: 2rem 0;
+  }
+}
+
 .eventos-registro {
   width: min(95%, 140rem);
   margin: 0 auto;
